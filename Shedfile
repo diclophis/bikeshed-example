@@ -1,0 +1,40 @@
+Feature: One Two Three
+  This is a block of text that is free-form
+  It should be used to describe the feature
+  Nothing in this block is special for bikeshed
+  Given, And, When, Then are important below
+
+#Background:
+#  Given my browser resolution is 1024x600
+#Scenario Outline: resolution
+#  Given my browser resolution is <supportedScreenSize>
+#  Examples:
+#    | supportedScreenSize |
+#    | 512x512             |
+#    | 1024x1024           |
+#Scenario Outline: user
+#  Given I am authenticated as <knownUser>
+#Examples:
+#  | knownUser           |
+#  | test@test.com       |
+#  | fart@test.com       |
+
+Scenario: Viewing the Homepage
+  Given I am on Mavenlink
+
+  Given the following users exist:
+    | name  | email           | phone |
+    | Aslak | aslak@email.com | 123   |
+    | Matt  | matt@email.com  | 234   |
+    | Joe   | joe@email.org   | 456   |
+
+  Given my browser resolution is one of the following:
+    | supportedScreenSize |
+    | 512x512             |
+    | 1024x1024           |
+
+  When I visit http://google.com
+  Then I should see #logo
+
+  When I visit /doc
+  Then I should see #reference

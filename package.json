@@ -1,0 +1,16 @@
+{
+  "name": "bikeshed-example",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/"
+  },
+  "scripts": {
+    "start": "bikeshed"
+  },
+  "author": "",
+  "dependencies": {
+    "bikeshed": "^0.0.1-alpha1"
+  }
+}
