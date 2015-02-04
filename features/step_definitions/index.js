@@ -3,7 +3,7 @@
 var myApplicationsSpecialSteps = function() {
   this.Given(/^I am on Mavenlink$/, function(callback) {
     //this.google.visitGoogle(callback);
-    console.log("using special ml callback");
+    //console.log("using special ml callback");
     callback();
   });
 

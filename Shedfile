@@ -18,43 +18,41 @@ Feature: One Two Three
 #  | knownUser           |
 #  | test@test.com       |
 #  | fart@test.com       |
-
-Scenario: Viewing the Homepage
-  Given I am on Mavenlink
-
-  Given the following users exist:
-    | name  | email           | phone |
-    | Aslak | aslak@email.com | 123   |
-    | Matt  | matt@email.com  | 234   |
-    | Joe   | joe@email.org   | 456   |
-
-  Given my browser resolution is one of the following:
-    | supportedScreenSize |
-    | 512x512             |
-    | 1024x1024           |
-
+#Scenario: Viewing the Homepage
+#  Given I am on Mavenlink
+#  Given the following users exist:
+#    | name  | email           | phone |
+#    | Aslak | aslak@email.com | 123   |
+#    | Matt  | matt@email.com  | 234   |
+#    | Joe   | joe@email.org   | 456   |
+#  Given my browser resolution is one of the following:
+#    | supportedScreenSize |
+#    | 512x512             |
+#    | 1024x1024           |
 #  When I visit /index.html?recurse=false
 #  Then I should see .logo
 
-  Given window https://google.com
-    And .logo
-    Then .logo
+  Given window https://0.1.0.1
+    Then fail
 
-  Given window https://app.mavenlink.com/login?from_redirect=true
-    When .agreement-link
-    And #new_user
-    Then screenshot
-
-  Given window https://app.mavenlink.com/login?from_redirect=true
-    And .logo
-    Then screenshot
-
+#  Given window https://google.com
+#    And see .logo
+#    Then see .logo
+#  Given window file:///Users/mavenlink/workspace/adventures-in-devops/ml-logo-compo/simple.html 
+#    And see .logo
+#    Then see .logo
+#  Given window https://app.mavenlink.com/login?from_redirect=true
+#    When .agreement-link
+#    And #new_user
+#    Then screenshot
+#  Given window https://app.mavenlink.com/login?from_redirect=true
+#    And .logo
+#    Then screenshot
 # window / enter
 # 
 #   click
 #   wait
 #       see
-
 # Given => begin loadingPhase, openWindow(url)
 # And => waitFor(cssSelector)
 # When => begin interactivePhase, triggerEvent(eventName, cssSelector) => inherent waitFor(cssSelector)
@@ -62,19 +60,16 @@ Scenario: Viewing the Homepage
 # Then => screenshotPhase, takeScreenshot(selector||window)
 # And => takeScreenshot(selector)
 # Given => closePrevious, begin loadingPhase, openWindow 
-
 # clickSelector, postClickSelector, screenshotSelector, screenshotName, callbackFn
 # window must be followed by X???
 # click must be preceeded by window
 # click must be followed by wait
 # wait must be preceeded by click
-
 #Scenario: 'Analytics'
 #  Given window .link.analytics
 #  When .link.analytics > a 
 #  And .layout-main-content-body-inner
 #  Then
-  
 #Scenario: 'Dashboard'
 #  Given clicked .main-content
 #  When click .main-content
@@ -82,13 +77,11 @@ Scenario: Viewing the Homepage
 #  Then see
 #  And see .mavenlink-header
 #  And see .navigation
-
 #Scenario: Files
 #  Given clicked .link.files
 #  When click .link.files > a
 #  And wait .file-dashboard
 #  Then see
-
 #casper.mavenTest 'Invoices Test', '.link.billing', ->
 #  casper.mavenClickTest '.link.billing > a', '.finance-center-content.invoices', '.main-content', 'invoices content', ->
 #casper.mavenTest 'Planning Test', '.link.planning', ->
@@ -97,7 +90,6 @@ Scenario: Viewing the Homepage
 #  casper.mavenClickTest '.link.projects > a', '.workspaces.tbl', '.main-content', 'project list-main content', ->
 #casper.mavenTest 'Settings Test', '.link.settings', ->
 #  casper.mavenClickTest '.link.settings > a', '.layout-main-content-body', '.main-content', 'settings content', ->
-
 #  "/workspaces/new",
 #  "/project_tracker_templates",
 #  "/stories",
@@ -145,7 +137,6 @@ Scenario: Viewing the Homepage
 #  "/settings/account/documents",
 #  "/private_label",
 #  "/private_label/edit"
-
 #casper.mavenTest 'Tasks Test', '.link.tasks', ->
 #  casper.mavenClickTest '.link.tasks > a', '#tracker tbody.rows', '.main-content', 'tasks content', ->
 #casper.mavenTest 'Time and Expenses Test', '.link.time-and-expenses', ->
