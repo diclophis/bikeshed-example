@@ -18,7 +18,9 @@ Feature: One Two Three
 #  | knownUser           |
 #  | test@test.com       |
 #  | fart@test.com       |
-#Scenario: Viewing the Homepage
+
+Scenario: Viewing the Homepage
+
 #  Given I am on Mavenlink
 #  Given the following users exist:
 #    | name  | email           | phone |
